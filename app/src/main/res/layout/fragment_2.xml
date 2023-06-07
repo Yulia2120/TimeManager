@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment1">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/stopwatchTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="140dp"
+            android:gravity="center_horizontal"
+            android:text="@string/default_time"
+            android:textSize="60sp"
+            android:textColor="@color/colorYellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="32dp"
+            android:text="stop"
+            android:backgroundTint="@color/colorYellow"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/stopwatchTextView"
+            app:layout_constraintTop_toTopOf="@+id/stopwatchTextView" />
+
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="100dp"
+            android:text="start"
+            android:backgroundTint="@color/colorYellow"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/stopwatchTextView"
+            app:layout_constraintTop_toTopOf="@+id/stopwatchTextView" />
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="reset"
+            android:backgroundTint="@color/colorYellow"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/buttonStop"
+            app:layout_constraintStart_toEndOf="@+id/buttonStart"
+            app:layout_constraintTop_toTopOf="@+id/stopwatchTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

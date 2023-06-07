@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ public class Fragment2 extends Fragment {
     private boolean wasRunning;
     private View rootView;
     private TextView timeView;
+    private ImageView imageViewReset, imageViewStart, imageViewStop;
     public Fragment2() {
     }
 
@@ -48,24 +50,24 @@ public class Fragment2 extends Fragment {
         }
         runTimer();
 
-        Button startButton = rootView.findViewById(R.id.buttonStart);
-        startButton.setOnClickListener(new View.OnClickListener() {
+        imageViewStart = rootView.findViewById(R.id.imageViewStart);
+        imageViewStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 running = true;
             }
         });
 
-        Button stopButton = rootView.findViewById(R.id.buttonStop);
-        stopButton.setOnClickListener(new View.OnClickListener() {
+        imageViewStop = rootView.findViewById(R.id.imageViewStop);
+        imageViewStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 running = false;
             }
         });
 
-        Button resetButton = rootView.findViewById(R.id.buttonReset);
-        resetButton.setOnClickListener(new View.OnClickListener() {
+         imageViewReset = rootView.findViewById(R.id.imageViewReset );
+         imageViewReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 running = false;

@@ -12,11 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Fragment1 extends Fragment {
@@ -24,6 +27,7 @@ public class Fragment1 extends Fragment {
     private int pageNumber;
     private Button buttonAlarm;
     private View rootView;
+    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
     public Fragment1() {
 
     }
@@ -47,6 +51,7 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_1, container, false);
         buttonAlarm = rootView.findViewById(R.id.buttonAlarm);
+
 
         initListeners();
 
@@ -75,6 +80,8 @@ public class Fragment1 extends Fragment {
 
                         AlarmManager alarmManager = (AlarmManager)  requireContext().getSystemService(Context.ALARM_SERVICE);
                         AlarmManager.AlarmClockInfo alarmClockInfo = new AlarmManager.AlarmClockInfo(calendar.getTimeInMillis(),getAlarmInfoPendingIntent());
+                        alarmManager.setAlarmClock(alarmClockInfo, getAlarmActionPendingIntent());
+                        Toast.makeText(requireContext(), "Alarm set on " + sdf.format(calendar.getTime()), Toast.LENGTH_SHORT).show();
                     }
 
                 });
@@ -88,7 +95,9 @@ public class Fragment1 extends Fragment {
         return PendingIntent.getActivity(requireContext(), 0, alarmInfoIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
-//    private PendingIntent getAlarmActionPendingIntent(){
-//        Intent intent = new Intent(requireContext(), )
-//    }
+    private PendingIntent getAlarmActionPendingIntent(){
+        Intent intent = new Intent(requireContext(), AlarmActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        return PendingIntent.getActivity(requireContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
 }

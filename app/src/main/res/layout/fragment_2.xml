@@ -27,40 +27,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonStop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imageViewStop"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
             android:layout_marginTop="100dp"
-            android:layout_marginEnd="32dp"
-            android:text="stop"
-            android:backgroundTint="@color/colorYellow"
-            android:textColor="@color/colorPrimary"
+            android:layout_marginEnd="96dp"
+            android:src="@drawable/icon_stop"
             app:layout_constraintEnd_toEndOf="@+id/stopwatchTextView"
             app:layout_constraintTop_toTopOf="@+id/stopwatchTextView" />
 
-        <Button
-            android:id="@+id/buttonStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+        <ImageView
+            android:id="@+id/imageViewStart"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="96dp"
             android:layout_marginTop="100dp"
-            android:text="start"
-            android:backgroundTint="@color/colorYellow"
-            android:textColor="@color/colorPrimary"
+            android:src="@drawable/icon_start"
             app:layout_constraintStart_toStartOf="@+id/stopwatchTextView"
             app:layout_constraintTop_toTopOf="@+id/stopwatchTextView" />
 
-        <Button
-            android:id="@+id/buttonReset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imageViewReset"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
             android:layout_marginTop="100dp"
-            android:text="reset"
-            android:backgroundTint="@color/colorYellow"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintEnd_toStartOf="@+id/buttonStop"
-            app:layout_constraintStart_toEndOf="@+id/buttonStart"
+            android:src="@drawable/icon_reset"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewStop"
+            app:layout_constraintStart_toEndOf="@+id/imageViewStart"
             app:layout_constraintTop_toTopOf="@+id/stopwatchTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

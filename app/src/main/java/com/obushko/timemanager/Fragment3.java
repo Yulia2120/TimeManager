@@ -51,7 +51,6 @@ public class Fragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //return inflater.inflate(R.layout.fragment_3, container, false);
         rootView = inflater.inflate(R.layout.fragment_3, container, false);
         progressBarCircle = rootView.findViewById(R.id.progressBarCircle);
         editTextMinute = rootView.findViewById(R.id.editTextMinute);
